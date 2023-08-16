@@ -281,7 +281,7 @@ get_vegplot_transpecies_from_NASIS_db <-  function(SS = TRUE,
   # veg transect species data - many species to one veg transect
   q.vtps <- "SELECT siteiid, siteobsiid, vegplotiid, vegtransectiidref as vegtransect_id, vegplotid, vegplotname,
     obsdate, vegtransplantsummiid as vtpsiid, vtps.seqnum, plantsym, plantsciname,
-    speciescancovclass, plantnatvernm, plantnativity, planttypegroup, 
+    plantnatvernm, plantnativity, planttypegroup, 
     plantheightcllowerlimit, plantheightclupperlimit, sociabilityclass, 
     specieslivecanhtbotave, specieslivecanhttopave, overstorydbhmin, 
     overstorydbhmax, speciesovercancovpct, speciesovercancovclass, 
