@@ -177,7 +177,7 @@ get_vegplot_species_from_NASIS_db <-  function(SS = TRUE,
   
   q.vegplotspecies <- "SELECT siteiid, siteobsiid, vegplotiid, vegplotid, vegplotname, obsdate, primarydatacollector, 
     datacollectionpurpose, assocuserpedonid, ppi.seqnum, plantsym, plantsciname, plantnatvernm,
-    planttypegroup, plantheightcllowerlimit, plantheightclupperlimit, 
+    speciescancovclass, planttypegroup, plantheightcllowerlimit, plantheightclupperlimit, 
     plantnativity, sociabilityclass, livecanopyhtbottom, livecanopyhttop, overstorydbhmin,
     overstorydbhmax, speciescancovpct, speciescancovclass, speciescomppct, speciesdbhaverage, 
     speciescompbywtpct, speciestreecount, speciestraceamtflag, speciesbasalarea, understorygrcovpct,
