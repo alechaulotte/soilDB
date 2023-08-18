@@ -238,7 +238,7 @@ get_vegplot_transect_from_NASIS_db <-  function(SS = TRUE,
   INNER JOIN vegplot_View_1 AS v ON v.siteobsiidref=so.siteobsiid
   LEFT OUTER JOIN pedon_View_1 AS p ON so.siteobsiid = p.siteobsiidref
   LEFT JOIN vegtransect_View_1 AS vt ON vt.vegplotiidref=v.vegplotiid
-  LEFT JOIN transectgroundcover_View_1 AS tgc ON tgc.vegtransectiidref=vt.vegtransectiid
+  LEFT JOIN transectgroundcover_View_1 AS tgc ON vt.vegtransectiid = tgc.vegtransectiidref
   ORDER BY s.siteiid;"
 
   channel <- dbConnectNASIS(dsn)
