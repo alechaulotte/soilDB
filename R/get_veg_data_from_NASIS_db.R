@@ -46,13 +46,14 @@ get_veg_data_from_NASIS_db <- function(SS=TRUE, dsn = NULL) {
   }
   
   # veg transect
-  q.vegtransect <- "SELECT siteiid, vegplotiid, vegplotid, vegplotname, obsdate, primarydatacollector, datacollectionpurpose, assocuserpedonid, vegtransectid, vegtransplantsummiid vtpsiid, transectlength, plantsym, plantsciname, plantnatvernm
+  q.vegtransect <- "SELECT siteiid, vegplotiid, vegplotid, vegplotname, obsdate, primarydatacollector, datacollectionpurpose, assocuserpedonid, vegtransectid, vegtransplantsummiid vtpsiid, transectlength, plantsym, plantsciname, plantnatvernm, groundcovertype, groundcoverptpct
   
     FROM site_View_1 AS s
     INNER JOIN siteobs ON siteobs.siteiidref=s.siteiid
     INNER JOIN vegplot_View_1 AS v on v.siteobsiidref=siteobs.siteobsiid
     LEFT JOIN vegtransect AS vt ON vt.vegplotiidref=v.vegplotiid
     LEFT JOIN vegtransectplantsummary AS vtps ON vtps.vegtransectiidref=vt.vegtransectiid
+    LEFT JOIN transectgroundcover AS tgc ON tgc.vegtransectiidref=vt.vegtransectiid
     INNER JOIN plant ON plant.plantiid=vtps.plantiidref
     ORDER BY s.siteiid;"
   
